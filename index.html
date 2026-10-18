@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>HGS Dev | Criação de Sites</title>
-  <meta name="description" content="Estúdio de criação de sites: landing pages, sites institucionais e portfólios feitos à mão, rápidos e pensados para trazer clientes.">
+  <meta name="description" content="Estúdio de criação de sites: landing pages, sites institucionais e portfólios rápidos, pensados para o seu negócio ser encontrado e escolhido.">
   <meta property="og:title" content="HGS Dev | Criação de Sites">
   <meta property="og:description" content="Sites profissionais que trazem clientes. Landing pages e sites institucionais sob medida.">
   <meta property="og:image" content="img/og.png">
@@ -14,6 +14,11 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700;800&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
+  <script>
+    // aplica o tema salvo antes de desenhar a página (evita piscar)
+    try { document.documentElement.dataset.theme = localStorage.getItem('hgs-theme') || 'dark'; }
+    catch (e) { document.documentElement.dataset.theme = 'dark'; }
+  </script>
 </head>
 <body>
   <div class="backdrop" aria-hidden="true"><span></span><span></span><span></span></div>
@@ -29,27 +34,42 @@
       <a href="#processo">Processo</a>
       <a href="#duvidas">Dúvidas</a>
     </nav>
+    <span class="theme-wrap">
+      <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Mudar para o tema claro">
+        <span class="tt-track" aria-hidden="true">
+          <span class="tt-thumb"></span>
+          <svg class="tt-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+          <svg class="tt-moon" viewBox="0 0 24 24"><path d="M20 14.5A8 8 0 1 1 9.5 4a6.5 6.5 0 0 0 10.5 10.5Z"/></svg>
+        </span>
+        <span class="tt-label">Tema claro</span>
+      </button>
+      <span class="theme-tip" id="theme-tip" role="status" hidden>Prefere fundo claro? É só tocar aqui.</span>
+    </span>
     <a class="btn btn-aqua btn-sm" href="https://wa.me/5519989003251?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20quero%20um%20or%C3%A7amento." target="_blank" rel="noopener">Chamar no WhatsApp</a>
     <button class="menu-btn" aria-label="Abrir menu" aria-expanded="false" aria-controls="nav"><span></span><span></span></button>
   </header>
 
   <main id="topo">
-    <!-- HERO: letreiro neon que acende sob o cursor e pisca quando ninguém mexe -->
-    <section class="hero">
-      <p class="pill reveal"><i></i>Agenda aberta · atendo todo o Brasil, remoto</p>
+    <!-- HERO: o mouse é um holofote que acende o letreiro; sem ninguém mexendo, ele pisca -->
+    <section class="hero" id="hero">
+      <div class="spotlight" aria-hidden="true"></div>
+      <div class="hero-meta">
+        <span>HGS Dev — estúdio de sites</span>
+        <span class="hide-sm">Atendimento em todo o Brasil</span>
+        <span class="live"><i></i>Aceitando novos projetos</span>
+      </div>
 
-      <div class="sign-board" id="sign">
-        <span class="screw tl"></span><span class="screw tr"></span><span class="screw bl"></span><span class="screw br"></span>
+      <div class="stage" id="sign">
         <h1 class="sign" aria-label="Sites que trazem clientes.">
-          <span class="sign-line" data-neon="aqua">Sites que</span>
-          <span class="sign-line" data-neon="lime">trazem</span>
-          <span class="sign-line" data-neon="aqua">clientes.</span>
+          <span class="sign-line">Sites que</span>
+          <span class="sign-line">trazem</span>
+          <span class="sign-line">clientes.</span>
         </h1>
-        <p class="sign-hint" id="sign-hint">passe o mouse para acender o letreiro</p>
+        <p class="sign-hint" id="sign-hint"><span class="hint-dot"></span>mova o mouse: ele é o holofote</p>
       </div>
 
       <div class="hero-card glass reveal">
-        <p>Eu sou o Higor, da <strong>HGS Dev</strong>. Crio landing pages e sites institucionais à mão, do zero, para negócios que precisam ser encontrados no Google e chamados no WhatsApp.</p>
+        <p>Eu sou o Higor, da <strong>HGS Dev</strong>. Crio landing pages e sites institucionais para negócios que precisam ser encontrados no Google e chamados no WhatsApp.</p>
         <div class="actions">
           <a class="btn btn-aqua" href="#monte">Montar meu site</a>
           <a class="btn btn-glass" href="#projetos">Ver projetos</a>
@@ -67,6 +87,28 @@
         <li><span class="orb" style="--o1:#ffb3c7;--o2:#d6335e"><svg viewBox="0 0 24 24"><path d="M13 2 4 14h7l-1 8 9-12h-7z"/></svg></span>Carrega rápido</li>
         <li><span class="orb" style="--o1:#a8f5d6;--o2:#12a37a"><svg viewBox="0 0 24 24"><path d="M5 19.5 6.3 15A7.5 7.5 0 1 1 9 17.7z"/></svg></span>WhatsApp integrado</li>
       </ul>
+    </section>
+
+    <!-- PRESENÇA DIGITAL: conscientização -->
+    <section class="section" id="presenca">
+      <div class="section-head reveal">
+        <p class="kicker">Presença digital</p>
+        <h2>Se não te encontram, <span class="hl">não te escolhem</span></h2>
+        <p>Antes de ligar, mandar mensagem ou passar na porta, o cliente pesquisa. O que ele encontra nesse momento decide se a próxima ligação vai ser para você ou para o concorrente.</p>
+      </div>
+      <div class="facts">
+        <article class="fact glass reveal"><span class="fact-n">01</span><h3>O Google é a vitrine</h3><p>Quem procura um serviço "perto de mim" escolhe entre os negócios que aparecem. Sem site, você depende só de indicação.</p></article>
+        <article class="fact glass reveal"><span class="fact-n">02</span><h3>Rede social não é sua casa</h3><p>O Instagram muda as regras quando quer e decide quem vê seus posts. O site é o endereço que ninguém tira de você.</p></article>
+        <article class="fact glass reveal"><span class="fact-n">03</span><h3>Confiança antes do contato</h3><p>Um bom site responde as dúvidas e mostra seus trabalhos. O cliente chega no WhatsApp já sabendo o que quer.</p></article>
+        <article class="fact glass reveal"><span class="fact-n">04</span><h3>Aberto 24 horas</h3><p>Enquanto você dorme, o site continua apresentando o seu negócio e recebendo pedidos de orçamento.</p></article>
+      </div>
+      <form class="search-test glass reveal" id="search-test" target="_blank" action="https://www.google.com/search" method="get">
+        <label for="q"><strong>Faça o teste agora.</strong> Pesquise o seu ramo e a sua cidade, do jeito que um cliente faria. Você aparece?</label>
+        <div class="search-row">
+          <input id="q" name="q" type="search" placeholder="Ex.: dentista em Americana" autocomplete="off" required>
+          <button class="btn btn-aqua" type="submit">Pesquisar no Google ↗</button>
+        </div>
+      </form>
     </section>
 
     <!-- PROJETOS -->
@@ -205,7 +247,7 @@
       <ol class="steps">
         <li class="step glass"><span class="orb" style="--o1:#7fd3ff;--o2:#0a7bd6">1</span><h3>Conversa</h3><p>Entendo o negócio, quem é o cliente e o que ele precisa fazer no site: ligar, pedir orçamento, agendar.</p></li>
         <li class="step glass"><span class="orb" style="--o1:#9ff0a8;--o2:#1f9d3a">2</span><h3>Direção visual</h3><p>Você vê a proposta de layout antes de qualquer linha de código: cores, fontes e a interação que vai ser a cara do site.</p></li>
-        <li class="step glass"><span class="orb" style="--o1:#ffe08a;--o2:#e08a00">3</span><h3>Código à mão</h3><p>HTML, CSS e JavaScript do zero. Fica leve, abre rápido no 4G e funciona igual no celular e no computador.</p></li>
+        <li class="step glass"><span class="orb" style="--o1:#ffe08a;--o2:#e08a00">3</span><h3>Construção</h3><p>Site leve, que abre rápido no 4G e é pensado primeiro para o celular, que é onde o seu cliente vai abrir.</p></li>
         <li class="step glass"><span class="orb" style="--o1:#ffb3c7;--o2:#d6335e">4</span><h3>No ar</h3><p>Coloco no domínio, ligo ao Google e ao seu WhatsApp e acompanho os primeiros dias para ajustar o que for preciso.</p></li>
       </ol>
     </section>
@@ -258,7 +300,7 @@
       <a href="https://www.linkedin.com/in/higorgsantos/" target="_blank" rel="noopener">LinkedIn</a>
       <a href="https://wa.me/5519989003251" target="_blank" rel="noopener">WhatsApp</a>
     </nav>
-    <p>© 2026 HGS Dev · feito à mão, linha por linha</p>
+    <p>© 2026 HGS Dev · presença digital para negócios de verdade</p>
   </footer>
 
   <a class="wa-float" href="https://wa.me/5519989003251?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20quero%20um%20or%C3%A7amento." target="_blank" rel="noopener" aria-label="Falar no WhatsApp">

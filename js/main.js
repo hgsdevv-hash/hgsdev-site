@@ -49,11 +49,40 @@ if (finePointer && !reduced) {
   })();
 }
 
-/* ---------- letreiro neon ---------- */
-const board = document.getElementById('sign');
+/* ---------- tema claro / escuro ---------- */
+const root = document.documentElement;
+const themeBtn = document.getElementById('theme-toggle');
+const themeTip = document.getElementById('theme-tip');
+const themeMeta = document.querySelector('meta[name="theme-color"]');
+const store = {
+  get: k => { try { return localStorage.getItem(k); } catch (e) { return null; } },
+  set: (k, v) => { try { localStorage.setItem(k, v); } catch (e) { /* sem armazenamento */ } },
+};
+function paintTheme() {
+  const dark = root.dataset.theme !== 'light';
+  themeBtn.querySelector('.tt-label').textContent = dark ? 'Tema claro' : 'Tema escuro';
+  themeBtn.setAttribute('aria-label', dark ? 'Mudar para o tema claro' : 'Mudar para o tema escuro');
+  themeMeta.setAttribute('content', dark ? '#0f0f11' : '#e9e6e0');
+}
+themeBtn.addEventListener('click', () => {
+  root.dataset.theme = root.dataset.theme === 'light' ? 'dark' : 'light';
+  store.set('hgs-theme', root.dataset.theme);
+  store.set('hgs-tip', '1');
+  themeTip.hidden = true;
+  paintTheme();
+});
+paintTheme();
+// na primeira visita, um balão aponta para o botão de tema
+if (!store.get('hgs-tip')) {
+  setTimeout(() => { themeTip.hidden = false; }, 1600);
+  setTimeout(() => { themeTip.hidden = true; store.set('hgs-tip', '1'); }, 9000);
+}
+
+/* ---------- letreiro com holofote ---------- */
+const hero = document.getElementById('hero');
 const hint = document.getElementById('sign-hint');
 const chars = [];
-board.querySelectorAll('.sign-line').forEach(line => {
+hero.querySelectorAll('.sign-line').forEach(line => {
   const text = line.textContent;
   line.textContent = '';
   for (const c of text) {
@@ -66,10 +95,12 @@ board.querySelectorAll('.sign-line').forEach(line => {
     if (c !== ' ') chars.push({ el: s, lit: 0, cx: 0, cy: 0, broken: false });
   }
 });
-// duas letras "com defeito" que tremem mais quando o letreiro está piscando
+// duas letras "com defeito" que tremem mais quando o letreiro está piscando sozinho
 for (let i = 0; i < 2; i++) chars[Math.floor(Math.random() * chars.length)].broken = true;
 
+let heroBox = hero.getBoundingClientRect();
 function measure() {
+  heroBox = hero.getBoundingClientRect();
   chars.forEach(c => {
     const r = c.el.getBoundingClientRect();
     c.cx = r.left + r.width / 2; c.cy = r.top + r.height / 2;
@@ -77,41 +108,50 @@ function measure() {
 }
 addEventListener('resize', measure);
 addEventListener('scroll', measure, { passive: true });
+addEventListener('load', measure);
+document.fonts && document.fonts.ready.then(measure);
 
-let hovering = false, px = 0, py = 0, lastMove = 0;
-if (!finePointer) hint.textContent = 'toque e arraste para acender o letreiro';
-const lightAt = (x, y) => { hovering = true; px = x; py = y; lastMove = performance.now(); board.classList.add('lit'); };
-board.addEventListener('pointermove', e => lightAt(e.clientX, e.clientY));
-board.addEventListener('pointerdown', e => { measure(); lightAt(e.clientX, e.clientY); });
-board.addEventListener('pointerenter', measure);
-board.addEventListener('pointerleave', () => { hovering = false; });
+if (!finePointer) hint.lastChild.textContent = 'arraste o dedo: ele é o holofote';
+let inside = false, tx = 0, ty = 0, sx = 0, sy = 0, lastMove = -9999, spotR = 0;
+const aim = (x, y) => {
+  if (!inside) { sx = x; sy = y; }
+  inside = true; tx = x; ty = y; lastMove = performance.now();
+  hero.classList.add('lit');
+};
+hero.addEventListener('pointermove', e => aim(e.clientX, e.clientY));
+hero.addEventListener('pointerdown', e => { measure(); aim(e.clientX, e.clientY); });
+hero.addEventListener('pointerenter', measure);
+hero.addEventListener('pointerleave', () => { inside = false; });
 
 // padrão de "pisca-pisca" de letreiro tentando ligar
 const BLINK = [1, 1, 1, 1, 0, 1, 0, .3, 1, 1, 1, 1, 1, 1, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, .2, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 1, .5, 1, 1, 1, 1];
-let idle = 0; // 0 = interagindo, 1 = em espera piscando
-function signLoop(now) {
-  const radius = Math.max(120, Math.min(260, innerWidth * .16));
+let idle = 1;
+function stageLoop(now) {
+  const active = inside || now - lastMove < 900;
+  if (!active) hero.classList.remove('lit');
+  idle += ((active ? 0 : 1) - idle) * .04;
+
+  // o holofote tem "peso": segue o mouse com atraso
+  sx += (tx - sx) * .12; sy += (ty - sy) * .12;
+  const radius = Math.max(140, Math.min(300, innerWidth * .18));
+  spotR += ((active ? radius : 0) - spotR) * .1;
+  hero.style.setProperty('--mx', (sx - heroBox.left) + 'px');
+  hero.style.setProperty('--my', (sy - heroBox.top) + 'px');
+  hero.style.setProperty('--spot-r', spotR.toFixed(1) + 'px');
+
   const step = BLINK[Math.floor(now / 110) % BLINK.length];
-  const active = hovering || now - lastMove < 1200;
-  idle += ((active ? 0 : 1) - idle) * .05;
-  if (!active) board.classList.remove('lit');
   for (const c of chars) {
-    if (hovering) {
-      const d = Math.hypot(c.cx - px, c.cy - py);
-      if (d < radius) c.lit = Math.max(c.lit, 1 - (d / radius) * .35);
-    }
-    c.lit *= active ? .995 : .94; // letras acesas apagam devagar
+    const d = Math.hypot(c.cx - sx, c.cy - sy);
+    const beam = spotR > 1 ? Math.max(0, 1 - d / (spotR * 1.15)) : 0;
+    c.lit += (Math.min(1, beam * 1.6) - c.lit) * .25;
     let blink = step;
     if (c.broken) blink *= Math.random() > .25 ? 1 : .1;
-    const on = Math.max(c.lit, idle * blink);
-    c.el.style.setProperty('--on', on.toFixed(3));
+    c.el.style.setProperty('--on', Math.max(c.lit, idle * blink).toFixed(3));
   }
-  requestAnimationFrame(signLoop);
+  requestAnimationFrame(stageLoop);
 }
 if (reduced) chars.forEach(c => c.el.style.setProperty('--on', 1));
-else { measure(); requestAnimationFrame(signLoop); }
-addEventListener('load', measure);
-document.fonts && document.fonts.ready.then(measure);
+else { measure(); requestAnimationFrame(stageLoop); }
 
 /* ---------- revelar ao rolar ---------- */
 const io = new IntersectionObserver(entries => {
