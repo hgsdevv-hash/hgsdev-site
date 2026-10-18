@@ -66,7 +66,6 @@ function paintTheme() {
 }
 themeBtn.addEventListener('click', () => {
   root.dataset.theme = root.dataset.theme === 'light' ? 'dark' : 'light';
-  store.set('hgs-theme', root.dataset.theme);
   store.set('hgs-tip', '1');
   themeTip.hidden = true;
   paintTheme();

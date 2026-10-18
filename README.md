@@ -14,7 +14,7 @@ img/            # capturas dos projetos, favicon e imagem de compartilhamento
 ## Interações
 
 - Letreiro "Sites que trazem clientes": o mouse é um holofote que acende as letras; sem ninguém mexendo, ele pisca sozinho
-- Tema claro e escuro, com botão na barra do topo (a escolha fica salva no navegador)
+- Abre sempre no tema escuro; o botão na barra do topo troca para o claro durante a visita
 - Seção de presença digital com teste rápido de busca no Google
 - Cursor de mãozinha que balança ao mover e aperta no clique
 - Janelas de projeto que rolam o site no hover e abrem ao vivo em computador ou celular

@@ -440,3 +440,6 @@ details p { margin: 0 0 20px; color: var(--ink-soft); }
   html { scroll-behavior: auto; }
   .reveal { opacity: 1; transform: none; }
 }
+.sphere small { max-width: 220px; margin-top: -6px; font: 400 14px/1.45 var(--body); color: var(--ink-soft); text-align: center; }
+.sphere span { color: var(--ink); font-size: 13px; }
+.sphere-note { margin: 34px 0 0; text-align: center; font: 400 12px var(--mono); color: var(--ink-faint); }

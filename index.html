@@ -13,11 +13,10 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700;800&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css?v=3">
+  <link rel="stylesheet" href="css/style.css?v=4">
   <script>
-    // aplica o tema salvo antes de desenhar a página (evita piscar)
-    try { document.documentElement.dataset.theme = localStorage.getItem('hgs-theme') || 'dark'; }
-    catch (e) { document.documentElement.dataset.theme = 'dark'; }
+    // o site sempre abre no tema escuro; o claro vale só enquanto a página estiver aberta
+    document.documentElement.dataset.theme = 'dark';
   </script>
 </head>
 <body>
@@ -255,16 +254,17 @@
     <!-- QUALIDADE: esferas que enchem de água -->
     <section class="section">
       <div class="section-head reveal">
-        <p class="kicker">Por baixo do capô</p>
+        <p class="kicker">Qualidade que o Google confere</p>
         <h2>Bonito é o <span class="hl">mínimo</span></h2>
-        <p>O Google mede velocidade, acessibilidade e organização do código antes de decidir quem aparece primeiro. Esta é a meta mínima no Lighthouse para todo projeto que sai daqui:</p>
+        <p>O Google dá uma nota de 0 a 100 para cada site antes de decidir quem aparece primeiro na busca. Quanto maior a nota, mais fácil o seu cliente te encontrar. Todo site que eu entrego sai com estas notas, no mínimo:</p>
       </div>
       <div class="spheres">
-        <div class="sphere reveal" data-value="95"><div class="water"><i></i></div><b>0</b><span>Performance</span></div>
-        <div class="sphere reveal" data-value="95"><div class="water"><i></i></div><b>0</b><span>Acessibilidade</span></div>
-        <div class="sphere reveal" data-value="100"><div class="water"><i></i></div><b>0</b><span>Boas práticas</span></div>
-        <div class="sphere reveal" data-value="100"><div class="water"><i></i></div><b>0</b><span>SEO</span></div>
+        <div class="sphere reveal" data-value="95"><div class="water"><i></i></div><b>0</b><span>Abre rápido</span><small>Carrega em poucos segundos, até no 4G do celular.</small></div>
+        <div class="sphere reveal" data-value="95"><div class="water"><i></i></div><b>0</b><span>Fácil de usar</span><small>Letras legíveis e botões fáceis de tocar, para qualquer pessoa.</small></div>
+        <div class="sphere reveal" data-value="100"><div class="water"><i></i></div><b>0</b><span>Seguro</span><small>Sem aquele aviso de "site não seguro" no navegador.</small></div>
+        <div class="sphere reveal" data-value="100"><div class="water"><i></i></div><b>0</b><span>Achado no Google</span><small>Organizado para o Google entender o que você faz.</small></div>
       </div>
+      <p class="sphere-note reveal">Notas medidas com a ferramenta oficial do Google antes de entregar o site.</p>
     </section>
 
     <!-- DÚVIDAS -->
@@ -334,6 +334,6 @@
     </defs>
   </svg>
 
-  <script src="js/main.js?v=3"></script>
+  <script src="js/main.js?v=4"></script>
 </body>
 </html>
