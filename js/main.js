@@ -188,10 +188,24 @@ function onScrollProcess() {
   meter.style.width = ((active + 1) / steps.length * 100) + '%';
 }
 
+/* ---------- barra do topo some ao descer e volta ao subir ---------- */
+const bar = document.querySelector('.taskbar');
+let lastY = scrollY;
+function onScrollBar() {
+  const y = scrollY;
+  const dy = y - lastY;
+  if (Math.abs(dy) < 6) return; // ignora tremidinhas do scroll
+  const keep = y < 120 || document.body.classList.contains('menu-open') || !themeTip.hidden;
+  bar.classList.toggle('bar-hidden', dy > 0 && !keep);
+  lastY = y;
+}
+bar.addEventListener('focusin', () => bar.classList.remove('bar-hidden'));
+
 /* ---------- botão flutuante do WhatsApp ---------- */
 const waFloat = document.querySelector('.wa-float');
 addEventListener('scroll', () => {
   waFloat.classList.toggle('show', scrollY > innerHeight * .7);
+  onScrollBar();
   onScrollProcess();
 }, { passive: true });
 onScrollProcess();

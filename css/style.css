@@ -127,8 +127,9 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
   border-radius: 999px; background: var(--bar); border: 1px solid var(--glass-edge);
   backdrop-filter: blur(22px) saturate(1.2); -webkit-backdrop-filter: blur(22px) saturate(1.2);
   box-shadow: 0 10px 30px -18px rgba(0, 0, 0, .6);
-  transition: background-color .5s;
+  transition: background-color .5s, transform .45s var(--ease), opacity .3s;
 }
+.taskbar.bar-hidden { transform: translate(-50%, calc(-100% - 24px)); opacity: 0; pointer-events: none; }
 .brand { display: inline-flex; align-items: center; gap: 10px; font: 700 19px var(--display); letter-spacing: -.03em; }
 .brand b { font-weight: 700; color: var(--accent); }
 .nav { display: flex; gap: 2px; margin-left: auto; }
