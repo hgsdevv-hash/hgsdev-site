@@ -223,12 +223,14 @@ document.querySelectorAll('.project .try').forEach(btn => btn.addEventListener('
   openLink.href = url;
   modal.hidden = false;
   document.body.style.overflow = 'hidden';
+  document.body.classList.add('modal-open'); // cursor normal enquanto testa o projeto
   modal.querySelector('.modal-close').focus();
 }));
 function closeModal() {
   modal.hidden = true;
   frame.src = 'about:blank';
   document.body.style.overflow = '';
+  document.body.classList.remove('modal-open');
   lastFocus && lastFocus.focus();
 }
 modal.querySelector('.modal-close').addEventListener('click', closeModal);

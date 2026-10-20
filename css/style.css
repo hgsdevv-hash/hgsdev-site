@@ -453,3 +453,9 @@ details p { margin: 0 0 20px; color: var(--ink-soft); }
   .project.wide { flex-direction: column; }
   .project.wide .shot { flex: none; aspect-ratio: 16 / 10; margin: 10px 10px 0; }
 }
+
+/* na janela "Testar aqui" o site do projeto roda numa moldura que não repassa o mouse:
+   desliga a mãozinha e volta o cursor normal até fechar */
+.modal-open .hand { display: none; }
+.modal-open, .modal-open .modal * { cursor: auto; }
+.modal-open .modal a, .modal-open .modal button { cursor: pointer; }
