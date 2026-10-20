@@ -444,3 +444,12 @@ details p { margin: 0 0 20px; color: var(--ink-soft); }
 .sphere small { max-width: 220px; margin-top: -6px; font: 400 14px/1.45 var(--body); color: var(--ink-soft); text-align: center; }
 .sphere span { color: var(--ink); font-size: 13px; }
 .sphere-note { margin: 34px 0 0; text-align: center; font: 400 12px var(--mono); color: var(--ink-faint); }
+
+/* projeto em faixa larga (fim do mosaico) */
+.project.wide { grid-column: 1 / -1; flex-direction: row; align-items: stretch; }
+.project.wide .shot { flex: 1.35; aspect-ratio: 16 / 9; margin: 10px; }
+.project.wide .win-body { flex: 1; align-content: center; }
+@media (max-width: 1080px) {
+  .project.wide { flex-direction: column; }
+  .project.wide .shot { flex: none; aspect-ratio: 16 / 10; margin: 10px 10px 0; }
+}
