@@ -20,6 +20,19 @@ img/            # capturas dos projetos, favicon e imagem de compartilhamento
 - Janelas de projeto que rolam o site no hover e abrem ao vivo em computador ou celular
 - Assistente que monta um rascunho de site e envia o pedido pronto para o WhatsApp
 
+## Privacidade e LGPD
+
+- `privacidade.html` (política, com a tabela de armazenamento local em #cookies) e `termos.html`, ligadas no rodapé
+- Sem cookies e sem rastreamento; só `hgs-tip` e `hgs-aviso` no armazenamento local
+- Fontes hospedadas no próprio site (`fonts/` + `css/fonts.css`), sem chamar o Google Fonts
+- Aviso de privacidade em `js/aviso.js`
+- As notas de qualidade aparecem como meta medida na entrega, sem garantia de posição no Google (ver `termos.html#resultados`)
+
+## Pendências
+
+- Incluir CNPJ (ou CPF, se for pessoa física) e um e-mail de contato no rodapé e na política
+- Autorização por escrito dos clientes cujos sites aparecem no portfólio
+
 ## Como abrir
 
 Abra o `index.html` no navegador. Não precisa instalar nada.

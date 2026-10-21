@@ -258,13 +258,13 @@ const TIPOS = {
 const ESTILOS = { escuro: 'Escuro e marcante', claro: 'Claro e elegante', vivo: 'Colorido e divertido' };
 
 const BLOCOS = {
-  'Sobre': () => `<h4>Sobre</h4><div class="pv-lines"><span></span><span></span><span></span></div>`,
-  'Serviços': () => `<h4>Serviços</h4><div class="pv-row"><span></span><span></span><span></span></div>`,
-  'Galeria': () => `<h4>Galeria</h4><div class="pv-row tall"><span></span><span></span><span></span></div>`,
-  'Depoimentos': () => `<h4>Depoimentos</h4><p class="pv-quote">"Atendimento rápido e o resultado ficou lindo."</p>`,
-  'Perguntas': () => `<h4>Perguntas</h4><div class="pv-lines"><span></span><span></span></div>`,
-  'Mapa': () => `<h4>Onde estamos</h4><div class="pv-map"></div>`,
-  'Agendamento': () => `<h4>Agende um horário</h4><div class="pv-cal">${Array.from({ length: 14 }, (_, i) => `<span class="${[3, 9, 11].includes(i) ? 'on' : ''}"></span>`).join('')}</div>`,
+  'Sobre': () => `<p class="pv-h">Sobre</p><div class="pv-lines"><span></span><span></span><span></span></div>`,
+  'Serviços': () => `<p class="pv-h">Serviços</p><div class="pv-row"><span></span><span></span><span></span></div>`,
+  'Galeria': () => `<p class="pv-h">Galeria</p><div class="pv-row tall"><span></span><span></span><span></span></div>`,
+  'Depoimentos': () => `<p class="pv-h">Depoimentos</p><p class="pv-quote">"Atendimento rápido e o resultado ficou lindo."</p>`,
+  'Perguntas': () => `<p class="pv-h">Perguntas</p><div class="pv-lines"><span></span><span></span></div>`,
+  'Mapa': () => `<p class="pv-h">Onde estamos</p><div class="pv-map"></div>`,
+  'Agendamento': () => `<p class="pv-h">Agende um horário</p><div class="pv-cal">${Array.from({ length: 14 }, (_, i) => `<span class="${[3, 9, 11].includes(i) ? 'on' : ''}"></span>`).join('')}</div>`,
 };
 
 const esc = s => s.replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' })[c]);
