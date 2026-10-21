@@ -482,15 +482,6 @@ details p { margin: 0 0 20px; color: var(--ink-soft); }
 .sphere-note { margin: 34px 0 0; text-align: center; font: 400 12px var(--mono); color: var(--ink-faint); }
 .sphere-note a { color: var(--ink); text-decoration: underline; text-underline-offset: 3px; }
 
-/* projeto em faixa larga (fim do mosaico) */
-.project.wide { grid-column: 1 / -1; flex-direction: row; align-items: stretch; }
-.project.wide .shot { flex: 1.35; aspect-ratio: 16 / 9; margin: 10px; }
-.project.wide .win-body { flex: 1; align-content: center; }
-@media (max-width: 1080px) {
-  .project.wide { flex-direction: column; }
-  .project.wide .shot { flex: none; aspect-ratio: 16 / 10; margin: 10px 10px 0; }
-}
-
 /* na janela "Testar aqui" o site do projeto roda numa moldura que não repassa o mouse:
    desliga a mãozinha e volta o cursor normal até fechar */
 .modal-open .hand { display: none; }
