@@ -1,0 +1,54 @@
+# HGS Dev
+
+> Estúdio de criação de sites para pequenos negócios e profissionais autônomos. Faz landing pages, sites institucionais e portfólios sob medida, pensados primeiro para o celular, preparados para aparecer no Google e com o contato indo direto para o WhatsApp. Atendimento on-line para todo o Brasil.
+
+## O que a HGS Dev faz
+
+- Landing pages: uma página para apresentar o serviço e levar o cliente até o WhatsApp.
+- Sites institucionais: várias seções sobre a empresa, os serviços, a equipe e o endereço.
+- Portfólios: vitrine de trabalhos para profissionais e artistas.
+- Cada site tem visual próprio, tirado da marca do cliente, e costuma ter uma interação ou animação exclusiva.
+
+## O que vem junto
+
+- Ajuda para registrar o domínio próprio (seunegocio.com.br) e colocar o site no ar.
+- Botão de WhatsApp com mensagem pronta.
+- Preparação para o Google: Search Console, sitemap e dados para a busca local.
+- Um vídeo vertical (reel) do site para divulgar no Instagram.
+- Política de privacidade e termos de uso de acordo com a LGPD.
+
+## Como contratar
+
+1. Conversa pelo WhatsApp para entender o negócio.
+2. Proposta com valor fechado, prazo e escopo por escrito.
+3. Direção visual aprovada antes da construção.
+4. Site no ar, ligado ao Google e ao WhatsApp, com acompanhamento nos primeiros dias.
+
+A HGS Dev não faz lojas virtuais com pagamento no site.
+
+## Páginas
+
+- [Início](https://www.hgsdev.com.br/): apresentação, projetos no ar, assistente "Monte seu site", processo e dúvidas frequentes.
+- [Política de privacidade](https://www.hgsdev.com.br/privacidade.html)
+- [Termos de uso](https://www.hgsdev.com.br/termos.html)
+
+## Projetos no ar
+
+- [Rei das Antenas](https://oreidasantenas.com.br/): loja de antenas, câmeras e portões em Santa Bárbara d'Oeste (SP).
+- [Cabibrás](https://hgsdevv-hash.github.io/cabibras/): caldeiraria e cabinas em Americana (SP).
+- [Rodo Alves](https://hgsdevv-hash.github.io/rodo-alves/): transporte de grãos em Rondônia.
+- [Limp Brilhe](https://hgsdevv-hash.github.io/limp-brilhe/): limpeza de vidros, lustres e pós-obra.
+- [Débora Baldin](https://hgsdevv-hash.github.io/debora-baldin/): tricologista em Americana (SP).
+- [Veneza Estética Car](https://hgsdevv-hash.github.io/veneza-estetica-car/): estética automotiva em Sumaré (SP).
+- [Meu Mundo Cristão](https://hgsdevv-hash.github.io/meu-mundo-cristao/): gravatas e camisas com envio para todo o Brasil.
+- [Matheus Silva](https://hgsdevv-hash.github.io/matheus-silva/): personal trainer em Americana (SP).
+- [Fagner Orlandini](https://hgsdevv-hash.github.io/fagner-orlandini/): educação física para públicos especiais.
+- [Barbaros](https://hgsdevv-hash.github.io/barbaros/): barbearia em Americana (SP).
+- [Blanco & Co.](https://hgsdevv-hash.github.io/blanco-co/): barbearia no Jardim Mollon.
+- [AT Doceria](https://hgsdevv-hash.github.io/at-doceria/): doceria em Santa Bárbara d'Oeste (SP).
+- [Stefany Alves](https://hgsdevv-hash.github.io/stefany-alves/): blog pessoal.
+
+## Contato
+
+- WhatsApp: +55 19 98900-3251 (https://wa.me/5519989003251)
+- Instagram: https://instagram.com/hgsd3sign

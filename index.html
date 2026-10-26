@@ -20,7 +20,7 @@
   <link rel="apple-touch-icon" href="img/apple-touch-icon.png?v=2">
   <link rel="preload" href="fonts/archivo-italic-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="css/fonts-v2.css?v=1">
-  <link rel="stylesheet" href="css/site.css?v=5">
+  <link rel="stylesheet" href="css/site.css?v=6">
   <!-- a abertura só aparece na primeira visita -->
   <script>try { if (localStorage.getItem('hgs-intro')) document.documentElement.classList.add('no-intro'); } catch (e) {}</script>
   <script type="application/ld+json">
@@ -52,7 +52,7 @@
     <a class="brand" href="#topo" aria-label="HGS Dev, início">HGS<span>.dev</span></a>
     <nav aria-label="Principal">
       <a href="#projetos">Projetos</a>
-      <a href="#incluso">O que vem junto</a>
+      <a href="#monte">Monte seu site</a>
       <a href="#processo">Processo</a>
       <a href="#duvidas">Dúvidas</a>
     </nav>
@@ -82,7 +82,7 @@
         <p><span data-nosnippet>Eu sou o Higor, da</span> <strong>HGS Dev</strong>. Faço sites para negócios que querem ser encontrados no Google e chamados no WhatsApp.</p>
         <div class="actions">
           <a class="btn btn-money" href="#projetos">Ver os projetos</a>
-          <a class="btn btn-ghost" href="https://wa.me/5519989003251" target="_blank" rel="noopener">Chamar no WhatsApp</a>
+          <a class="btn btn-ghost" href="#monte">Montar meu site</a>
         </div>
       </div>
     </section>
@@ -94,6 +94,27 @@
       </div>
     </div>
 
+    <section class="section" id="presenca">
+      <div class="head">
+        <p class="tag">/ Presença no Google</p>
+        <h2>Se não te encontram,<br>não te escolhem</h2>
+        <p class="sub">Antes de ligar, mandar mensagem ou passar na porta, o cliente pesquisa. O que ele encontra nesse momento decide se a próxima ligação vai ser para você ou para o concorrente.</p>
+      </div>
+      <ul class="steps facts">
+        <li><b>01</b><h3>O Google é a vitrine</h3><p>Quem procura um serviço "perto de mim" escolhe entre os negócios que aparecem. Sem site, você depende só de indicação.</p></li>
+        <li><b>02</b><h3>Rede social não é sua casa</h3><p>O Instagram muda as regras quando quer e decide quem vê seus posts. O site é o endereço que ninguém tira de você.</p></li>
+        <li><b>03</b><h3>Confiança antes do contato</h3><p>Um bom site responde as dúvidas e mostra seus trabalhos. O cliente chega no WhatsApp já sabendo o que quer.</p></li>
+        <li><b>04</b><h3>Aberto 24 horas</h3><p>Enquanto você dorme, o site continua apresentando o seu negócio e recebendo pedidos de orçamento.</p></li>
+      </ul>
+      <form class="search-test" target="_blank" action="https://www.google.com/search" method="get">
+        <label for="q"><strong>Faça o teste agora.</strong> Pesquise o seu ramo e a sua cidade, do jeito que um cliente faria. Você aparece?</label>
+        <div class="search-row">
+          <input id="q" name="q" type="search" placeholder="Ex.: dentista em Americana" autocomplete="off" required>
+          <button class="btn btn-money" type="submit">Pesquisar no Google ↗</button>
+        </div>
+      </form>
+    </section>
+
     <section class="section" id="projetos">
       <div class="head">
         <p class="tag">/ Projetos no ar</p>
@@ -101,6 +122,55 @@
         <p class="sub">Passe o mouse num site para ver ele rolar, ou toque em <strong>Testar aqui</strong> e use ele de verdade.</p>
       </div>
       <ol class="projects" id="lista"></ol>
+    </section>
+
+    <section class="section" id="monte">
+      <div class="head">
+        <p class="tag">/ Monte seu site</p>
+        <h2>Desenhe o seu<br>em 30 segundos</h2>
+        <p class="sub">Escolha o tipo, as seções e o clima. O rascunho se monta na hora e o pedido vai pronto para o meu WhatsApp.</p>
+      </div>
+      <div class="wizard">
+        <form class="builder-form" id="builder" onsubmit="return false">
+          <fieldset>
+            <legend><span>1</span>Que tipo de site?</legend>
+            <div class="chips">
+              <label><input type="radio" name="tipo" value="landing" checked><span>Landing page</span></label>
+              <label><input type="radio" name="tipo" value="institucional"><span>Site institucional</span></label>
+              <label><input type="radio" name="tipo" value="portfolio"><span>Portfólio</span></label>
+            </div>
+          </fieldset>
+          <fieldset>
+            <legend><span>2</span>O que não pode faltar?</legend>
+            <div class="chips">
+              <label><input type="checkbox" name="secoes" value="Sobre"><span>Sobre</span></label>
+              <label><input type="checkbox" name="secoes" value="Serviços"><span>Serviços</span></label>
+              <label><input type="checkbox" name="secoes" value="Galeria"><span>Galeria</span></label>
+              <label><input type="checkbox" name="secoes" value="Depoimentos"><span>Depoimentos</span></label>
+              <label><input type="checkbox" name="secoes" value="Perguntas"><span>Perguntas</span></label>
+              <label><input type="checkbox" name="secoes" value="Mapa"><span>Mapa</span></label>
+              <label><input type="checkbox" name="secoes" value="Agendamento"><span>Agendamento</span></label>
+            </div>
+          </fieldset>
+          <fieldset>
+            <legend><span>3</span>Qual o clima?</legend>
+            <div class="chips">
+              <label><input type="radio" name="estilo" value="escuro" checked><span>Escuro e marcante</span></label>
+              <label><input type="radio" name="estilo" value="claro"><span>Claro e elegante</span></label>
+              <label><input type="radio" name="estilo" value="vivo"><span>Colorido e divertido</span></label>
+            </div>
+          </fieldset>
+          <label class="field">
+            <span>Nome do seu negócio</span>
+            <input type="text" id="negocio" placeholder="Ex.: Padaria da Ana" maxlength="40" autocomplete="organization">
+          </label>
+          <a class="btn btn-money" id="send" href="https://wa.me/5519989003251" target="_blank" rel="noopener">Enviar rascunho no WhatsApp</a>
+        </form>
+        <div class="preview" id="preview" data-estilo="escuro" aria-live="polite">
+          <div class="pv-bar"><i></i><i></i><i></i><span id="pv-url">seunegocio.com.br</span></div>
+          <div class="pv-body" id="pv-body"></div>
+        </div>
+      </div>
     </section>
 
     <section class="section band-money" id="incluso">
@@ -162,21 +232,16 @@
     <p>© 2026 HGS Dev · presença digital para negócios de verdade</p>
   </footer>
 
-  <!-- Pickup de dinheiro girando, no estilo dos GTAs antigos -->
-  <button class="pickup" type="button" aria-label="Pegar o dinheiro">
+  <!-- Pickup de dinheiro girando, no estilo dos GTAs antigos (só decoração) -->
+  <span class="pickup" aria-hidden="true">
     <span class="pickup-spin">
       <span class="bill b1"><b>$</b></span>
       <span class="bill b2"><b>$</b></span>
       <span class="bill b3"><b>$</b></span>
       <span class="band"></span>
     </span>
-    <!-- pistola em 3D de verdade: blocos com 6 faces montados pelo js/site.js -->
-    <span class="gun-spin" aria-hidden="true"><span class="gun3d"></span></span>
     <span class="pickup-shadow"></span>
-  </button>
-
-  <!-- Contador de dinheiro coletado, igual o HUD do jogo -->
-  <div class="hud" aria-live="polite"><span>R$</span><b id="cash">00000000</b></div>
+  </span>
 
   <dialog class="viewer" id="viewer">
     <div class="viewer-bar">
@@ -191,7 +256,7 @@
     <div class="viewer-frame"><iframe id="viewer-iframe" title="Prévia do projeto" loading="lazy"></iframe></div>
   </dialog>
 
-  <script src="js/site.js?v=5"></script>
+  <script src="js/site.js?v=6"></script>
   <script src="js/aviso.js?v=1"></script>
 </body>
 </html>
