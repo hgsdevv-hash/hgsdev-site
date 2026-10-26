@@ -4,17 +4,23 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>HGS Dev | Criação de Sites</title>
-  <meta name="description" content="Estúdio de criação de sites: landing pages, sites institucionais e portfólios rápidos, pensados para o seu negócio ser encontrado e escolhido.">
-  <meta property="og:title" content="HGS Dev | Criação de Sites">
-  <meta property="og:description" content="Sites profissionais que trazem clientes. Landing pages e sites institucionais sob medida.">
+  <meta name="description" content="Estúdio de criação de sites: landing pages, sites institucionais e portfólios para negócios que querem ser encontrados no Google e chamados no WhatsApp. Atendimento em todo o Brasil.">
+  <link rel="canonical" href="https://www.hgsdev.com.br/">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://www.hgsdev.com.br/">
   <meta property="og:site_name" content="HGS Dev">
   <meta property="og:locale" content="pt_BR">
+  <meta property="og:title" content="HGS Dev | Criação de Sites">
+  <meta property="og:description" content="Sites que trazem clientes. Veja os projetos no ar.">
   <meta property="og:image" content="https://www.hgsdev.com.br/img/og.png">
   <meta name="twitter:card" content="summary_large_image">
-  <link rel="canonical" href="https://www.hgsdev.com.br/">
-  <meta name="theme-color" content="#0f0f11">
+  <meta name="theme-color" content="#0b0b0c">
+  <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="fonts/archivo-italic-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="css/fonts-v2.css?v=1">
+  <link rel="stylesheet" href="css/site.css?v=5">
+  <!-- a abertura só aparece na primeira visita -->
+  <script>try { if (localStorage.getItem('hgs-intro')) document.documentElement.classList.add('no-intro'); } catch (e) {}</script>
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -22,299 +28,130 @@
     "name": "HGS Dev",
     "description": "Estúdio de criação de sites: landing pages, sites institucionais e portfólios para negócios que querem ser encontrados no Google.",
     "url": "https://www.hgsdev.com.br/",
-    "logo": "https://www.hgsdev.com.br/img/favicon.svg",
-    "image": "https://www.hgsdev.com.br/img/og.png",
     "telephone": "+55 19 98900-3251",
     "areaServed": { "@type": "Country", "name": "Brasil" },
-    "sameAs": [
-      "https://instagram.com/hgsd3sign"
-    ],
-    "knowsAbout": ["Criação de sites", "Landing pages", "Sites institucionais", "Portfólios", "SEO local"]
+    "sameAs": ["https://instagram.com/hgsd3sign"]
   }
   </script>
-  <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
-  <link rel="preload" href="fonts/geist-normal-latin.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="css/fonts.css">
-  <link rel="stylesheet" href="css/style.css?v=11">
-  <script>
-    // o site sempre abre no tema escuro; o claro vale só enquanto a página estiver aberta
-    document.documentElement.dataset.theme = 'dark';
-  </script>
 </head>
-<body>
-  <a class="skip-link" href="#topo">Pular para o conteúdo</a>
-  <div class="backdrop" aria-hidden="true"><span></span><span></span><span></span></div>
+<body class="is-loading">
+  <!-- Abertura: a marca se desenha, acende e a página aparece -->
+  <div class="intro" aria-hidden="true">
+    <svg class="intro-logo" viewBox="0 0 420 120">
+      <text x="50%" y="88" text-anchor="middle">HGS</text>
+    </svg>
+    <div class="intro-sub"><span>.dev</span> estúdio de sites</div>
+    <div class="intro-bar"><i></i></div>
+  </div>
 
-  <header class="taskbar">
-    <a href="#topo" class="brand" aria-label="HGS Dev, início">
-      <span class="orb orb-sm"><svg viewBox="0 0 100 100" width="20" height="20" aria-hidden="true"><use href="#mark"/></svg></span>
-      <span>HGS<b>.dev</b></span>
-    </a>
-    <nav class="nav" id="nav">
+  <a class="skip" href="#conteudo">Pular para o conteúdo</a>
+
+  <header class="nav">
+    <a class="brand" href="#topo" aria-label="HGS Dev, início">HGS<span>.dev</span></a>
+    <nav aria-label="Principal">
       <a href="#projetos">Projetos</a>
-      <a href="#monte">Monte seu site</a>
+      <a href="#incluso">O que vem junto</a>
       <a href="#processo">Processo</a>
       <a href="#duvidas">Dúvidas</a>
     </nav>
-    <span class="theme-wrap">
-      <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Mudar para o tema claro">
-        <span class="tt-track" aria-hidden="true">
-          <span class="tt-thumb"></span>
-          <svg class="tt-sun" viewBox="0 0 24 24" width="14" height="14"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
-          <svg class="tt-moon" viewBox="0 0 24 24" width="14" height="14"><path d="M20 14.5A8 8 0 1 1 9.5 4a6.5 6.5 0 0 0 10.5 10.5Z"/></svg>
-        </span>
-        <span class="tt-label">Tema claro</span>
-      </button>
-      <span class="theme-tip" id="theme-tip" role="status" hidden>Prefere fundo claro? É só tocar aqui.</span>
-    </span>
-    <a class="btn btn-aqua btn-sm" href="https://wa.me/5519989003251?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20quero%20um%20or%C3%A7amento." target="_blank" rel="noopener">Chamar no WhatsApp</a>
-    <button class="menu-btn" aria-label="Abrir menu" aria-expanded="false" aria-controls="nav"><span></span><span></span></button>
+    <a class="btn btn-money btn-sm" href="https://wa.me/5519989003251?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20quero%20um%20or%C3%A7amento." target="_blank" rel="noopener">Pedir orçamento</a>
   </header>
 
-  <main id="topo" tabindex="-1">
-    <!-- HERO: o mouse é um holofote que acende o letreiro; sem ninguém mexendo, ele pisca -->
-    <section class="hero" id="hero">
+  <main id="conteudo">
+    <!-- Letreiro de neon: o mouse é o holofote que acende as letras; parado, ele pisca sozinho -->
+    <section class="hero" id="topo">
       <div class="spotlight" aria-hidden="true"></div>
       <div class="hero-meta">
-        <span>HGS Dev — estúdio de sites</span>
+        <span>HGS Dev · estúdio de sites</span>
         <span class="hide-sm">Atendimento em todo o Brasil</span>
         <span class="live"><i></i>Aceitando novos projetos</span>
       </div>
 
-      <div class="stage" id="sign">
+      <div class="stage">
         <h1 class="sign" aria-label="Sites que trazem clientes.">
           <span class="sign-line">Sites que</span>
           <span class="sign-line">trazem</span>
-          <span class="sign-line">clientes.</span>
+          <span class="sign-line money-line">clientes.</span>
         </h1>
-        <p class="sign-hint" id="sign-hint"><span class="hint-dot"></span>mova o mouse: ele é o holofote</p>
+        <p class="sign-hint" id="sign-hint"><span class="hint-dot"></span><span>mova o mouse: ele é o holofote</span></p>
       </div>
 
-      <div class="hero-card glass reveal">
-        <p><span data-nosnippet>Eu sou o Higor, da</span> <strong>HGS Dev</strong>. Crio landing pages e sites institucionais para negócios que precisam ser encontrados no Google e chamados no WhatsApp.</p>
+      <div class="hero-card">
+        <p><span data-nosnippet>Eu sou o Higor, da</span> <strong>HGS Dev</strong>. Faço sites para negócios que querem ser encontrados no Google e chamados no WhatsApp.</p>
         <div class="actions">
-          <a class="btn btn-aqua" href="#monte">Montar meu site</a>
-          <a class="btn btn-glass" href="#projetos">Ver projetos</a>
+          <a class="btn btn-money" href="#projetos">Ver os projetos</a>
+          <a class="btn btn-ghost" href="https://wa.me/5519989003251" target="_blank" rel="noopener">Chamar no WhatsApp</a>
         </div>
       </div>
     </section>
 
-    <!-- DOCK de serviços -->
-    <section class="dock-wrap" aria-label="O que eu faço">
-      <ul class="dock glass reveal">
-        <li><span class="orb" style="--o1:#7fd3ff;--o2:#0a7bd6"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="13" rx="2"/><path d="M8 21h8M12 17v4"/></svg></span>Landing pages</li>
-        <li><span class="orb" style="--o1:#9ff0a8;--o2:#1f9d3a"><svg viewBox="0 0 24 24"><path d="M3 21h18M5 21V9l7-5 7 5v12M9 21v-6h6v6"/></svg></span>Sites institucionais</li>
-        <li><span class="orb" style="--o1:#ffe08a;--o2:#e08a00"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="8" height="8" rx="1.5"/><rect x="13" y="3" width="8" height="8" rx="1.5"/><rect x="3" y="13" width="8" height="8" rx="1.5"/><rect x="13" y="13" width="8" height="8" rx="1.5"/></svg></span>Portfólios</li>
-        <li><span class="orb" style="--o1:#c7b5ff;--o2:#5b3fd6"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="6"/><path d="m20 20-4.5-4.5"/></svg></span>SEO local</li>
-        <li><span class="orb" style="--o1:#ffb3c7;--o2:#d6335e"><svg viewBox="0 0 24 24"><path d="M13 2 4 14h7l-1 8 9-12h-7z"/></svg></span>Carrega rápido</li>
-        <li><span class="orb" style="--o1:#a8f5d6;--o2:#12a37a"><svg viewBox="0 0 24 24"><path d="M5 19.5 6.3 15A7.5 7.5 0 1 1 9 17.7z"/></svg></span>WhatsApp integrado</li>
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee-track">
+        <span>Sites sob medida</span><span>Botão do WhatsApp</span><span>Domínio próprio</span><span>Aparece no Google</span><span>Vídeo para divulgar</span><span>Feito para o celular</span>
+        <span>Sites sob medida</span><span>Botão do WhatsApp</span><span>Domínio próprio</span><span>Aparece no Google</span><span>Vídeo para divulgar</span><span>Feito para o celular</span>
+      </div>
+    </div>
+
+    <section class="section" id="projetos">
+      <div class="head">
+        <p class="tag">/ Projetos no ar</p>
+        <h2>Cada negócio,<br>um site com cara dele</h2>
+        <p class="sub">Passe o mouse num site para ver ele rolar, ou toque em <strong>Testar aqui</strong> e use ele de verdade.</p>
+      </div>
+      <ol class="projects" id="lista"></ol>
+    </section>
+
+    <section class="section band-money" id="incluso">
+      <div class="head">
+        <p class="tag tag-dark">/ Vem junto</p>
+        <h2>Você só manda<br>as fotos e o texto</h2>
+      </div>
+      <ul class="news">
+        <li><span>01</span><h3>Seu nome na internet</h3><p>Eu ajudo a registrar o seunegocio.com.br e deixo o site funcionando nele.</p></li>
+        <li><span>02</span><h3>Chamada no WhatsApp</h3><p>Um toque e o cliente já cai na sua conversa, com a mensagem pronta.</p></li>
+        <li><span>03</span><h3>Fácil de achar no Google</h3><p>O site é preparado para aparecer quando procuram o seu serviço na sua cidade.</p></li>
+        <li><span>04</span><h3>Vídeo para divulgar</h3><p>Um reel mostrando o site novo, pronto para você postar no Instagram.</p></li>
       </ul>
     </section>
 
-    <!-- PRESENÇA DIGITAL: conscientização -->
-    <section class="section" id="presenca">
-      <div class="section-head reveal">
-        <p class="kicker">Presença digital</p>
-        <h2>Se não te encontram, <span class="hl">não te escolhem</span></h2>
-        <p>Antes de ligar, mandar mensagem ou passar na porta, o cliente pesquisa. O que ele encontra nesse momento decide se a próxima ligação vai ser para você ou para o concorrente.</p>
-      </div>
-      <div class="facts">
-        <article class="fact glass reveal"><span class="fact-n">01</span><h3>O Google é a vitrine</h3><p>Quem procura um serviço "perto de mim" escolhe entre os negócios que aparecem. Sem site, você depende só de indicação.</p></article>
-        <article class="fact glass reveal"><span class="fact-n">02</span><h3>Rede social não é sua casa</h3><p>O Instagram muda as regras quando quer e decide quem vê seus posts. O site é o endereço que ninguém tira de você.</p></article>
-        <article class="fact glass reveal"><span class="fact-n">03</span><h3>Confiança antes do contato</h3><p>Um bom site responde as dúvidas e mostra seus trabalhos. O cliente chega no WhatsApp já sabendo o que quer.</p></article>
-        <article class="fact glass reveal"><span class="fact-n">04</span><h3>Aberto 24 horas</h3><p>Enquanto você dorme, o site continua apresentando o seu negócio e recebendo pedidos de orçamento.</p></article>
-      </div>
-      <form class="search-test glass reveal" id="search-test" target="_blank" action="https://www.google.com/search" method="get">
-        <label for="q"><strong>Faça o teste agora.</strong> Pesquise o seu ramo e a sua cidade, do jeito que um cliente faria. Você aparece?</label>
-        <div class="search-row">
-          <input id="q" name="q" type="search" placeholder="Ex.: dentista em Americana" autocomplete="off" required>
-          <button class="btn btn-aqua" type="submit">Pesquisar no Google ↗</button>
-        </div>
-      </form>
-    </section>
-
-    <!-- PROJETOS -->
-    <section class="section" id="projetos">
-      <div class="section-head reveal">
-        <p class="kicker">Projetos no ar</p>
-        <h2>Cada site tem um <span class="hl">truque próprio</span></h2>
-        <p>Nada de layout repetido com a cor trocada. Passe o mouse numa janela para rolar o site, ou clique em "Testar aqui" e use ele de verdade.</p>
-      </div>
-
-      <div class="bento">
-        <article class="window project big reveal" data-url="https://oreidasantenas.com.br/">
-          <div class="titlebar"><span class="t-icon" style="--o1:#9fc3ff;--o2:#1d3f9a"></span><span class="t-title">Rei das Antenas</span><span class="t-btns"><i></i><i></i><i class="x"></i></span></div>
-          <div class="shot"><img src="img/rei-das-antenas-full.jpg" alt="Página da Rei das Antenas: título 'Antena, câmera e portão funcionando de novo.' e um medidor de sinal" loading="lazy"></div>
-          <div class="win-body">
-            <div>
-              <p class="meta">Landing page · Santa Bárbara d'Oeste</p>
-              <h3>Rei das Antenas</h3>
-              <p>Medidor de sinal animado, serviços que abrem em cards, nota do Google logo no topo e orçamento direto no WhatsApp.</p>
-            </div>
-            <div class="win-side">
-              <ul class="tags"><li>SEO local</li><li>Prova social do Google</li><li>Orçamento via WhatsApp</li></ul>
-              <div class="links">
-                <button class="btn btn-aqua btn-sm try">Testar aqui</button>
-                <a class="btn btn-glass btn-sm" href="https://oreidasantenas.com.br/" target="_blank" rel="noopener">Ao vivo ↗</a>
-              </div>
-            </div>
-          </div>
-        </article>
-        <article class="window project reveal" data-url="https://hgsdevv-hash.github.io/limp-brilhe/">
-          <div class="titlebar"><span class="t-icon"></span><span class="t-title">Limp Brilhe — Limpeza de vidros e lustres</span><span class="t-btns"><i></i><i></i><i class="x"></i></span></div>
-          <div class="shot"><img src="img/limp-brilhe-full.jpg" alt="Página da Limp Brilhe: título 'Limpeza de vidros, lustres e pós-obra com brilho de verdade' e uma janela embaçada para limpar com o dedo" loading="lazy"></div>
-          <div class="win-body">
-            <div>
-              <p class="meta">Landing page · Limpeza e pós-obra</p>
-              <h3>Limp Brilhe</h3>
-              <p>A página abre com um rodinho limpando a tela, a janela do topo desembaça quando você passa o dedo e os trabalhos reais aparecem em vídeo.</p>
-            </div>
-            <div class="win-side">
-              <ul class="tags"><li>Abertura animada</li><li>Vídeos de trabalhos</li></ul>
-              <div class="links">
-                <button class="btn btn-aqua btn-sm try">Testar aqui</button>
-                <a class="btn btn-glass btn-sm" href="https://hgsdevv-hash.github.io/limp-brilhe/" target="_blank" rel="noopener">Ao vivo ↗</a>
-              </div>
-            </div>
-          </div>
-        </article>
-        <article class="window project reveal" data-url="https://hgsdevv-hash.github.io/rodo-alves/">
-          <div class="titlebar"><span class="t-icon" style="--o1:#ffc78a;--o2:#c25a1c"></span><span class="t-title">Rodo Alves — Transporte de grãos</span><span class="t-btns"><i></i><i></i><i class="x"></i></span></div>
-          <div class="shot"><img src="img/rodo-alves-full.jpg" alt="Página da Rodo Alves: título 'Grão colhido, grão entregue.' e um caminhão graneleiro na estrada de terra" loading="lazy"></div>
-          <div class="win-body">
-            <div>
-              <p class="meta">Landing page · Rondônia</p>
-              <h3>Rodo Alves</h3>
-              <p>Um caminhão atravessa a estrada de terra e buzina quando você clica, o seletor de frota troca o desenho da carreta e a rota "da lavoura ao destino" avança conforme a página rola.</p>
-            </div>
-            <div class="win-side">
-              <ul class="tags"><li>Ilustração interativa</li><li>Animação na rolagem</li><li>Cotação via WhatsApp</li></ul>
-              <div class="links">
-                <button class="btn btn-aqua btn-sm try">Testar aqui</button>
-                <a class="btn btn-glass btn-sm" href="https://hgsdevv-hash.github.io/rodo-alves/" target="_blank" rel="noopener">Ao vivo ↗</a>
-              </div>
-            </div>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <!-- CONFIGURADOR em forma de assistente -->
-    <section class="section" id="monte">
-      <div class="section-head reveal">
-        <p class="kicker">Monte seu site</p>
-        <h2>Desenhe o seu em <span class="hl">30 segundos</span></h2>
-        <p>Escolha o tipo, as seções e o clima. O rascunho se monta na janela ao lado e o pedido vai pronto para o meu WhatsApp.</p>
-      </div>
-
-      <div class="window wizard reveal">
-        <div class="titlebar"><span class="t-icon" style="--o1:#9ff0a8;--o2:#1f9d3a"></span><span class="t-title">Assistente de novo site</span><span class="t-btns"><i></i><i></i><i class="x"></i></span></div>
-        <div class="wizard-body">
-          <form class="builder-form" id="builder" onsubmit="return false">
-            <fieldset>
-              <legend><span>1</span>Que tipo de site?</legend>
-              <div class="chips">
-                <label><input type="radio" name="tipo" value="landing" checked><span>Landing page</span></label>
-                <label><input type="radio" name="tipo" value="institucional"><span>Site institucional</span></label>
-                <label><input type="radio" name="tipo" value="portfolio"><span>Portfólio</span></label>
-              </div>
-            </fieldset>
-            <fieldset>
-              <legend><span>2</span>O que não pode faltar?</legend>
-              <div class="chips">
-                <label><input type="checkbox" name="secoes" value="Sobre"><span>Sobre</span></label>
-                <label><input type="checkbox" name="secoes" value="Serviços"><span>Serviços</span></label>
-                <label><input type="checkbox" name="secoes" value="Galeria"><span>Galeria</span></label>
-                <label><input type="checkbox" name="secoes" value="Depoimentos"><span>Depoimentos</span></label>
-                <label><input type="checkbox" name="secoes" value="Perguntas"><span>Perguntas</span></label>
-                <label><input type="checkbox" name="secoes" value="Mapa"><span>Mapa</span></label>
-                <label><input type="checkbox" name="secoes" value="Agendamento"><span>Agendamento</span></label>
-              </div>
-            </fieldset>
-            <fieldset>
-              <legend><span>3</span>Qual o clima?</legend>
-              <div class="chips">
-                <label><input type="radio" name="estilo" value="escuro" checked><span>Escuro e marcante</span></label>
-                <label><input type="radio" name="estilo" value="claro"><span>Claro e elegante</span></label>
-                <label><input type="radio" name="estilo" value="vivo"><span>Colorido e divertido</span></label>
-              </div>
-            </fieldset>
-            <label class="field">
-              <span>Nome do seu negócio</span>
-              <input type="text" id="negocio" placeholder="Ex.: Padaria da Ana" maxlength="40" autocomplete="organization">
-            </label>
-            <a class="btn btn-green btn-wide" id="send" href="#" target="_blank" rel="noopener">Enviar rascunho no WhatsApp</a>
-          </form>
-
-          <div class="preview" id="preview" data-estilo="escuro" aria-live="polite">
-            <div class="pv-bar"><i></i><i></i><i></i><span id="pv-url">seunegocio.com.br</span></div>
-            <div class="pv-body" id="pv-body"></div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- PROCESSO com barra de progresso -->
     <section class="section" id="processo">
-      <div class="section-head reveal">
-        <p class="kicker">Processo</p>
-        <h2>Do papo <span class="hl">ao ar</span></h2>
+      <div class="head">
+        <p class="tag">/ Processo</p>
+        <h2>Do papo ao ar</h2>
       </div>
-      <div class="progress glass" aria-hidden="true"><span id="meter"></span></div>
       <ol class="steps">
-        <li class="step glass"><span class="orb" style="--o1:#7fd3ff;--o2:#0a7bd6">1</span><h3>Conversa</h3><p>Entendo o negócio, quem é o cliente e o que ele precisa fazer no site: ligar, pedir orçamento, agendar.</p></li>
-        <li class="step glass"><span class="orb" style="--o1:#9ff0a8;--o2:#1f9d3a">2</span><h3>Direção visual</h3><p>Você vê a proposta de layout antes de qualquer linha de código: cores, fontes e a interação que vai ser a cara do site.</p></li>
-        <li class="step glass"><span class="orb" style="--o1:#ffe08a;--o2:#e08a00">3</span><h3>Construção</h3><p>Site leve, que abre rápido no 4G e é pensado primeiro para o celular, que é onde o seu cliente vai abrir.</p></li>
-        <li class="step glass"><span class="orb" style="--o1:#ffb3c7;--o2:#d6335e">4</span><h3>No ar</h3><p>Coloco no domínio, ligo ao Google e ao seu WhatsApp e acompanho os primeiros dias para ajustar o que for preciso.</p></li>
+        <li><b>1</b><h3>Conversa</h3><p>Entendo o negócio, quem é o cliente e o que ele precisa fazer no site: ligar, pedir orçamento, agendar.</p></li>
+        <li><b>2</b><h3>Direção visual</h3><p>Você vê como o site vai ficar, com as cores e o jeito da sua marca, antes de eu construir.</p></li>
+        <li><b>3</b><h3>Construção</h3><p>Monto o site pensando primeiro no celular, que é onde o seu cliente vai abrir.</p></li>
+        <li><b>4</b><h3>No ar</h3><p>Coloco no seu endereço, ligo ao WhatsApp e acompanho os primeiros dias.</p></li>
       </ol>
     </section>
 
-    <!-- QUALIDADE: esferas que enchem de água -->
-    <section class="section">
-      <div class="section-head reveal">
-        <p class="kicker">Qualidade que o Google confere</p>
-        <h2>Bonito é o <span class="hl">mínimo</span></h2>
-        <p>O Google dá uma nota de 0 a 100 para cada site antes de decidir quem aparece primeiro na busca. Quanto maior a nota, mais fácil o seu cliente te encontrar. A meta para todo site que eu entrego, conferida antes da entrega:</p>
+    <section class="section" id="duvidas">
+      <div class="head">
+        <p class="tag">/ Dúvidas</p>
+        <h2>Antes de chamar</h2>
       </div>
-      <div class="spheres">
-        <div class="sphere reveal" data-value="95"><div class="water"><i></i></div><b>0</b><span>Abre rápido</span><small>Carrega em poucos segundos, até no 4G do celular.</small></div>
-        <div class="sphere reveal" data-value="95"><div class="water"><i></i></div><b>0</b><span>Fácil de usar</span><small>Letras legíveis e botões fáceis de tocar, para qualquer pessoa.</small></div>
-        <div class="sphere reveal" data-value="100"><div class="water"><i></i></div><b>0</b><span>Seguro</span><small>Sem aquele aviso de "site não seguro" no navegador.</small></div>
-        <div class="sphere reveal" data-value="100"><div class="water"><i></i></div><b>0</b><span>Achado no Google</span><small>Organizado para o Google entender o que você faz.</small></div>
-      </div>
-      <p class="sphere-note reveal">Notas medidas no PageSpeed Insights, do Google, na entrega. Elas podem mudar com o conteúdo adicionado depois, e nenhuma nota garante posição no Google. <a href="termos.html#resultados">Entenda</a>.</p>
-    </section>
-
-    <!-- DÚVIDAS -->
-    <section class="section faq" id="duvidas">
-      <div class="section-head reveal">
-        <p class="kicker">Dúvidas</p>
-        <h2>Antes de <span class="hl">chamar</span></h2>
-      </div>
-      <div class="faq-list">
-        <details class="glass reveal"><summary>Quanto custa um site?</summary><p>Depende do tamanho e do que ele precisa fazer. Uma landing page de uma página custa bem menos que um site com várias seções. Me chama no WhatsApp com o rascunho lá de cima e eu mando o valor fechado, sem surpresa no final.</p></details>
-        <details class="glass reveal"><summary>Quanto tempo demora?</summary><p>O prazo vem junto com o orçamento e começa a contar quando eu tiver os textos e as fotos do seu negócio. Landing pages costumam ser as mais rápidas.</p></details>
-        <details class="glass reveal"><summary>Preciso ter domínio e hospedagem?</summary><p>Não. Eu ajudo a registrar o domínio (o seunegocio.com.br) e cuido de colocar o site no ar.</p></details>
-        <details class="glass reveal"><summary>Vocês fazem loja virtual?</summary><p>Não. O foco aqui é landing page, site institucional e portfólio: sites que apresentam bem o negócio e levam o cliente até você, no WhatsApp, no telefone ou no agendamento.</p></details>
-        <details class="glass reveal"><summary>E se eu quiser mudar algo depois?</summary><p>Pequenos ajustes logo depois da entrega estão inclusos, pelo período escrito na proposta. Depois disso, é só me chamar.</p></details>
+      <div class="faq">
+        <details><summary>Quanto custa um site?</summary><p>Depende do tamanho e do que ele precisa fazer. Uma landing page custa bem menos que um site com várias seções. Me chama no WhatsApp e eu mando o valor fechado, sem surpresa no final.</p></details>
+        <details><summary>Quanto tempo demora?</summary><p>O prazo vem junto com o orçamento e começa a contar quando eu tiver os textos e as fotos do seu negócio.</p></details>
+        <details><summary>Preciso ter domínio e hospedagem?</summary><p>Não. Eu ajudo a registrar o domínio (o seunegocio.com.br) e cuido de colocar o site no ar.</p></details>
+        <details><summary>Vocês fazem loja virtual?</summary><p>Não. O foco é landing page, site institucional e portfólio: sites que apresentam bem o negócio e levam o cliente até você.</p></details>
+        <details><summary>E se eu quiser mudar algo depois?</summary><p>Pequenos ajustes logo depois da entrega estão inclusos, pelo período escrito na proposta. Depois disso, é só me chamar.</p></details>
       </div>
     </section>
 
-    <!-- CTA -->
     <section class="cta">
-      <div class="cta-card glass reveal">
-        <h2>Bora tirar o seu site <span class="hl">do papel?</span></h2>
-        <p>Conta rapidinho o que você precisa. Eu respondo no WhatsApp com uma proposta.</p>
-        <a class="btn btn-green btn-xl" href="https://wa.me/5519989003251?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20quero%20um%20or%C3%A7amento." target="_blank" rel="noopener">Pedir orçamento grátis</a>
-      </div>
+      <h2>Bora tirar o seu site do papel?</h2>
+      <p>Conta rapidinho o que você precisa. Eu respondo no WhatsApp com uma proposta.</p>
+      <a class="btn btn-dark" href="https://wa.me/5519989003251?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20quero%20um%20or%C3%A7amento." target="_blank" rel="noopener">Pedir orçamento grátis →</a>
     </section>
   </main>
 
-  <footer class="footer">
-    <a href="#topo" class="brand"><span class="orb orb-sm"><svg viewBox="0 0 100 100" width="20" height="20" aria-hidden="true"><use href="#mark"/></svg></span><span>HGS<b>.dev</b></span></a>
-    <nav class="social" aria-label="Informações legais e redes">
+  <footer class="foot">
+    <a class="brand" href="#topo">HGS<span>.dev</span></a>
+    <nav aria-label="Rodapé">
       <a href="privacidade.html">Privacidade</a>
-      <a href="privacidade.html#cookies">Cookies</a>
       <a href="termos.html">Termos de uso</a>
       <a href="https://instagram.com/hgsd3sign" target="_blank" rel="noopener">Instagram</a>
       <a href="https://www.linkedin.com/in/higorgsantos/" target="_blank" rel="noopener">LinkedIn</a>
@@ -323,40 +160,36 @@
     <p>© 2026 HGS Dev · presença digital para negócios de verdade</p>
   </footer>
 
-  <aside aria-label="Atalho do WhatsApp">
-  <a class="wa-float" href="https://wa.me/5519989003251?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20quero%20um%20or%C3%A7amento." target="_blank" rel="noopener" aria-label="Falar no WhatsApp">
-    <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.3-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2l-.6-.3Z"/></svg>
-    <span>WhatsApp</span>
-  </a>
-  </aside>
+  <!-- Pickup de dinheiro girando, no estilo dos GTAs antigos -->
+  <button class="pickup" type="button" aria-label="Pegar o dinheiro">
+    <span class="pickup-spin">
+      <span class="bill b1"><b>$</b></span>
+      <span class="bill b2"><b>$</b></span>
+      <span class="bill b3"><b>$</b></span>
+      <span class="band"></span>
+    </span>
+    <!-- pistola em 3D de verdade: blocos com 6 faces montados pelo js/site.js -->
+    <span class="gun-spin" aria-hidden="true"><span class="gun3d"></span></span>
+    <span class="pickup-shadow"></span>
+  </button>
 
-  <div class="modal" id="modal" hidden>
-    <div class="window modal-box" role="dialog" aria-modal="true" aria-label="Testar projeto">
-      <div class="titlebar">
-        <span class="t-icon" style="--o1:#7fd3ff;--o2:#0a7bd6"></span>
-        <div class="device-toggle" role="group" aria-label="Tamanho da tela">
-          <button class="on" data-device="desktop">Computador</button>
-          <button data-device="mobile">Celular</button>
-        </div>
-        <a id="modal-open" href="#" target="_blank" rel="noopener">Abrir em nova aba ↗</a>
-        <span class="t-btns"><i></i><i></i><button class="x modal-close" aria-label="Fechar"></button></span>
+  <!-- Contador de dinheiro coletado, igual o HUD do jogo -->
+  <div class="hud" aria-live="polite"><span>R$</span><b id="cash">00000000</b></div>
+
+  <dialog class="viewer" id="viewer">
+    <div class="viewer-bar">
+      <strong id="viewer-title"></strong>
+      <div class="viewer-modes" role="group" aria-label="Tamanho da tela">
+        <button type="button" class="chip is-on" data-mode="desk">Computador</button>
+        <button type="button" class="chip" data-mode="cel">Celular</button>
       </div>
-      <div class="modal-stage"><iframe id="modal-frame" title="Projeto ao vivo"></iframe></div>
+      <a id="viewer-open" class="btn btn-ghost btn-sm" target="_blank" rel="noopener">Abrir em nova aba ↗</a>
+      <button type="button" class="viewer-close" aria-label="Fechar">✕</button>
     </div>
-  </div>
+    <div class="viewer-frame"><iframe id="viewer-iframe" title="Prévia do projeto" loading="lazy"></iframe></div>
+  </dialog>
 
-  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
-    <defs>
-      <linearGradient id="mg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ffffff"/><stop offset="1" stop-color="#d9f4ff"/></linearGradient>
-      <symbol id="mark" viewBox="0 0 100 100">
-        <rect x="14" y="10" width="20" height="80" rx="5" fill="url(#mg)"/>
-        <rect x="66" y="10" width="20" height="80" rx="5" fill="url(#mg)"/>
-        <line x1="27" y1="64" x2="73" y2="36" stroke="url(#mg)" stroke-width="15" stroke-linecap="round"/>
-      </symbol>
-    </defs>
-  </svg>
-
-  <script src="js/main.js?v=10"></script>
+  <script src="js/site.js?v=5"></script>
   <script src="js/aviso.js?v=1"></script>
 </body>
 </html>
