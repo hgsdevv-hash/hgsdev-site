@@ -164,6 +164,41 @@
   if (reduz) letras.forEach(l => l.el.style.setProperty('--on', 1));
   else { medir(); requestAnimationFrame(quadro); }
 
+  /* ---------- faixa de números: contam de 0 até o valor quando aparecem ---------- */
+  const numeros = document.querySelectorAll('.numbers dd');
+  const contar = (el) => {
+    const alvo = +el.dataset.to, t0 = performance.now();
+    const passo = (t) => {
+      const k = Math.min(1, (t - t0) / 1400);
+      el.textContent = Math.round(alvo * (1 - Math.pow(1 - k, 3)));
+      if (k < 1) requestAnimationFrame(passo);
+    };
+    requestAnimationFrame(passo);
+  };
+  if (!reduz) {
+    numeros.forEach(el => { el.textContent = '0'; });
+    const ioN = new IntersectionObserver(es => es.forEach(en => {
+      if (en.isIntersecting) { contar(en.target); ioN.unobserve(en.target); }
+    }), { threshold: .6 });
+    numeros.forEach(el => ioN.observe(el));
+  }
+
+  /* ---------- pickup de dinheiro: clicou, aparece +67$ e o maço volta ---------- */
+  const pickup = document.querySelector('.pickup');
+  pickup.addEventListener('click', () => {
+    if (pickup.classList.contains('is-taken')) return;
+    const r = pickup.getBoundingClientRect();
+    const plus = document.createElement('span');
+    plus.className = 'plus';
+    plus.textContent = '+67$';
+    plus.style.left = `${r.left - 22}px`;
+    plus.style.top = `${r.top - 18}px`;
+    document.body.appendChild(plus);
+    setTimeout(() => plus.remove(), 1100);
+    pickup.classList.add('is-taken');
+    setTimeout(() => pickup.classList.remove('is-taken'), 1500);
+  });
+
   /* ---------- monte seu site: rascunho ao vivo que vai pronto para o WhatsApp ---------- */
   const form = document.getElementById('builder');
   const pvBody = document.getElementById('pv-body');

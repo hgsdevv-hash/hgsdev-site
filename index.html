@@ -20,7 +20,7 @@
   <link rel="apple-touch-icon" href="img/apple-touch-icon.png?v=2">
   <link rel="preload" href="fonts/archivo-italic-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="css/fonts-v2.css?v=1">
-  <link rel="stylesheet" href="css/site.css?v=6">
+  <link rel="stylesheet" href="css/site.css?v=7">
   <!-- a abertura só aparece na primeira visita -->
   <script>try { if (localStorage.getItem('hgs-intro')) document.documentElement.classList.add('no-intro'); } catch (e) {}</script>
   <script type="application/ld+json">
@@ -87,12 +87,14 @@
       </div>
     </section>
 
-    <div class="marquee" aria-hidden="true">
-      <div class="marquee-track">
-        <span>Sites sob medida</span><span>Botão do WhatsApp</span><span>Domínio próprio</span><span>Aparece no Google</span><span>Vídeo para divulgar</span><span>Feito para o celular</span>
-        <span>Sites sob medida</span><span>Botão do WhatsApp</span><span>Domínio próprio</span><span>Aparece no Google</span><span>Vídeo para divulgar</span><span>Feito para o celular</span>
-      </div>
-    </div>
+    <section class="numbers" aria-label="A HGS Dev em números">
+      <dl>
+        <div><dt>Sites no ar</dt><dd data-to="13">13</dd></div>
+        <div><dt>Ramos de negócio</dt><dd data-to="11">11</dd></div>
+        <div><dt>Layouts repetidos</dt><dd data-to="0">0</dd></div>
+        <div><dt>Horas por dia trabalhando por você</dt><dd data-to="24">24</dd></div>
+      </dl>
+    </section>
 
     <section class="section" id="presenca">
       <div class="head">
@@ -232,8 +234,8 @@
     <p>© 2026 HGS Dev · presença digital para negócios de verdade</p>
   </footer>
 
-  <!-- Pickup de dinheiro girando, no estilo dos GTAs antigos (só decoração) -->
-  <span class="pickup" aria-hidden="true">
+  <!-- Pickup de dinheiro girando, no estilo dos GTAs antigos: clicou, pegou +67$ -->
+  <button class="pickup" type="button" aria-label="Pegar o dinheiro">
     <span class="pickup-spin">
       <span class="bill b1"><b>$</b></span>
       <span class="bill b2"><b>$</b></span>
@@ -241,7 +243,7 @@
       <span class="band"></span>
     </span>
     <span class="pickup-shadow"></span>
-  </span>
+  </button>
 
   <dialog class="viewer" id="viewer">
     <div class="viewer-bar">
@@ -256,7 +258,7 @@
     <div class="viewer-frame"><iframe id="viewer-iframe" title="Prévia do projeto" loading="lazy"></iframe></div>
   </dialog>
 
-  <script src="js/site.js?v=6"></script>
+  <script src="js/site.js?v=7"></script>
   <script src="js/aviso.js?v=1"></script>
 </body>
 </html>
