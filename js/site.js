@@ -268,8 +268,6 @@
   padroes();
   montar(true);
 
-  // abertura: só na primeira visita, curta, e pulada por quem prefere menos movimento
-  const jaViu = document.documentElement.classList.contains('no-intro');
-  try { localStorage.setItem('hgs-intro', '1'); } catch (e) { /* segue sem lembrar */ }
-  setTimeout(() => { document.body.classList.replace('is-loading', 'is-ready'); medir(); }, reduz || jaViu ? 0 : 1200);
+  // abertura: em toda visita, curta, e pulada por quem prefere menos movimento
+  setTimeout(() => { document.body.classList.replace('is-loading', 'is-ready'); medir(); }, reduz ? 0 : 1200);
 })();
